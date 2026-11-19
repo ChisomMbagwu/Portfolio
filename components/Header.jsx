@@ -4,7 +4,6 @@ import Icon from "./Icons";
 
 const links = [
   { href: "/#about", label: "About" },
-  { href: "/#cv", label: "CV" },
   { href: "/#case-files", label: "Case files" },
   { href: "/#teardown", label: "Teardown" },
   { href: "/#experience", label: "Experience" },

@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Headshot from "@/components/Headshot";
 import Icon from "@/components/Icons";
 import {
-  site, hero, about, caseStudies, digitallie, thinking, builds,
+  site, hero, about, caseStudies, thinking, builds,
   experience, skills, education, credentials, beyond, cv, contact,
 } from "@/data/content";
 
@@ -28,7 +28,7 @@ function SectionHead({ icon, num, title, intro, tone }) {
           </span>
           <h2 className="h-display text-3xl sm:text-5xl">{title}</h2>
         </div>
-        <span className="hidden font-mono text-sm text-muted sm:block">{num} / 08</span>
+        <span className="hidden font-mono text-sm text-muted sm:block">{num} / 07</span>
       </div>
       {intro && <p className="mt-4 max-w-prose text-lg text-muted">{intro}</p>}
     </div>
@@ -64,7 +64,11 @@ export default function Home() {
             <span className="block text-4xl leading-[1.02] sm:text-6xl">{site.name}</span>
             <span className="mt-2 block text-xl font-medium text-ember sm:text-2xl">{site.role}</span>
           </h1>
-          <p className="mt-5 max-w-prose text-lg leading-relaxed text-muted">{hero.sub}</p>
+          <div className="mt-5 max-w-prose space-y-2 text-lg leading-relaxed text-muted">
+            {hero.sub.split("\n").map((t) => (
+              <p key={t}>{t}</p>
+            ))}
+          </div>
           <div className="mt-7">
             <Link href="/#case-files" className="btn btn-primary focus-ring">
               See my work <Icon name="arrow" size={18} />
@@ -82,18 +86,14 @@ export default function Home() {
             <p key={t}>{t}</p>
           ))}
         </div>
-      </Section>
-
-      {/* 02 CV */}
-      <Section id="cv">
-        <div className="flex flex-col gap-6 rounded-3xl border border-ember/60 bg-card p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
+        <div id="cv" className="mt-10 flex scroll-mt-24 flex-col gap-5 rounded-3xl border border-ember/60 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ember/15 text-ember">
-              <Icon name="file" size={28} />
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-ember/15 text-ember">
+              <Icon name="file" size={24} />
             </span>
             <div>
-              <h2 className="font-serif text-3xl font-semibold sm:text-4xl">{cv.title}</h2>
-              <p className="mt-1 text-muted">{cv.intro}</p>
+              <h3 className="font-serif text-2xl font-semibold">{cv.title}</h3>
+              <p className="text-muted">{cv.intro}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -109,7 +109,7 @@ export default function Home() {
 
       {/* 03 CASE FILES: projects, case studies, teardown */}
       <Section id="case-files" tone="sage">
-        <SectionHead icon="folder" num="03" title="Case files" />
+        <SectionHead icon="folder" num="02" title="Case files" />
 
         <SubHead id="projects" icon="layers" title={builds.title} />
         <div className="grid gap-5 sm:grid-cols-2">
@@ -154,15 +154,6 @@ export default function Home() {
               </Link>
             </Reveal>
           ))}
-          <Reveal className={`${card} flex h-full flex-col`}>
-            <p className="eyebrow">{digitallie.kicker}</p>
-            <h4 className="mt-3 font-serif text-2xl font-semibold leading-snug">{digitallie.title}</h4>
-            <div className="mt-3 space-y-3 text-muted">
-              {digitallie.body.map((t) => (
-                <p key={t}>{t}</p>
-              ))}
-            </div>
-          </Reveal>
         </div>
 
         <SubHead id="teardown" icon="search" title={thinking.title} intro={thinking.intro} />
@@ -184,7 +175,7 @@ export default function Home() {
         </Reveal>
         <div className="mt-10 space-y-10">
           {thinking.figures.map((f) => (
-            <figure key={f.src}>
+            <figure key={f.src} className="max-w-4xl">
               <a href={f.src} target="_blank" rel="noreferrer" className="focus-ring block overflow-hidden rounded-2xl border border-line bg-card">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={f.src} alt={f.title} loading="lazy" className="h-auto w-full" />
@@ -240,7 +231,7 @@ export default function Home() {
 
       {/* 04 EXPERIENCE */}
       <Section id="experience">
-        <SectionHead icon="briefcase" num="04" title="Work experience" />
+        <SectionHead icon="briefcase" num="03" title="Work experience" />
         <ol className="relative space-y-10 border-l border-line pl-8 sm:pl-10">
           {experience.map((e) => (
             <li key={e.org} className="relative">
@@ -272,7 +263,7 @@ export default function Home() {
 
       {/* 05 SKILLS */}
       <Section id="skills" tone="sage">
-        <SectionHead icon="zap" num="05" title="Skills" />
+        <SectionHead icon="zap" num="04" title="Skills" />
         <div className="grid gap-5 md:grid-cols-3">
           {skills.map((g) => (
             <div key={g.group} className={card}>
@@ -294,15 +285,15 @@ export default function Home() {
 
       {/* 06 EDUCATION AND CERTIFICATIONS */}
       <Section id="education">
-        <SectionHead icon="cap" num="06" title="Education and certifications" />
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHead icon="cap" num="05" title="Education and certifications" />
+        <ul className="grid gap-3 sm:grid-cols-2">
           <li>
             <div className="flex h-full flex-col rounded-2xl border border-ember/60 bg-card px-5 py-4">
-              <span className="flex items-center gap-2 text-sm font-semibold text-ember">
-                <Icon name="cap" size={18} /> Degree
-              </span>
-              <span className="mt-2 font-medium">{education.degree}</span>
+              <span className="font-medium">{education.degree}</span>
               <span className="mt-1 text-sm text-muted">{education.school}</span>
+              <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ember">
+                <Icon name="cap" size={15} /> Degree
+              </span>
             </div>
           </li>
           {credentials.map((c) => (
@@ -314,23 +305,17 @@ export default function Home() {
                   rel="noreferrer"
                   className="focus-ring group flex h-full flex-col rounded-2xl border border-line bg-card px-5 py-4 transition-colors hover:border-ink"
                 >
-                  <span className="flex items-center gap-2 text-sm font-semibold text-ember">
-                    <Icon name="award" size={18} /> Certificate
-                  </span>
-                  <span className="mt-2 font-medium">{c.name}</span>
+                  <span className="font-medium">{c.name}</span>
                   <span className="mt-1 text-sm text-muted">
                     {c.org}{c.period ? `, ${c.period}` : ""}
                   </span>
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-sm font-semibold text-ember">
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ember">
                     View certificate <Icon name="out" size={15} />
                   </span>
                 </a>
               ) : (
                 <div className="flex h-full flex-col rounded-2xl border border-line bg-card px-5 py-4">
-                  <span className="flex items-center gap-2 text-sm font-semibold text-ember">
-                    <Icon name="award" size={18} /> Certificate
-                  </span>
-                  <span className="mt-2 font-medium">{c.name}</span>
+                  <span className="font-medium">{c.name}</span>
                   <span className="mt-1 text-sm text-muted">{c.org}</span>
                 </div>
               )}
@@ -341,7 +326,7 @@ export default function Home() {
 
       {/* 07 BEYOND WORK */}
       <Section id="beyond" tone="sage">
-        <SectionHead icon="heart" num="07" title={beyond.title} intro={beyond.intro} />
+        <SectionHead icon="heart" num="06" title={beyond.title} intro={beyond.intro} />
         <ul className="divide-y divide-line border-y border-line">
           {beyond.volunteering.map((v) => (
             <li key={v.t} className="py-5">
@@ -357,7 +342,7 @@ export default function Home() {
 
       {/* 08 CONTACT */}
       <Section id="contact" tone="card">
-        <SectionHead icon="mail" num="08" title={contact.title} intro={contact.text} tone="card" />
+        <SectionHead icon="mail" num="07" title={contact.title} intro={contact.text} tone="card" />
         <ul className="flex flex-wrap gap-3">
           <li>
             <a className="btn btn-ghost focus-ring" href={`mailto:${site.email}`}>

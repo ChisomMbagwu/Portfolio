@@ -28,7 +28,7 @@
   --sage: 239 234 224;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 15px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {

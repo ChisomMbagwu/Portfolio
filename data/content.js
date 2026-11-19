@@ -16,7 +16,7 @@ export const site = {
 export const hero = {
   badge: "Beyond Tickets & Timelines",
   headline: "Chisom Mbagwu, Product Manager",
-  sub: "Real user problems, solved in ways the business can sustain.",
+  sub: "Real user problems, solved in ways the business can sustain.\nI bring clarity when things are messy, and evidence when opinions run the room, so the team builds what matters.",
 };
 
 export const workedOn = {
@@ -37,7 +37,7 @@ export const caseStudies = [
     slug: "vendstash-business-api",
     chips: ["Business API", "Escrow at checkout", "KYB onboarding"],
     kicker: "Payments, B2B",
-    title: "Vendstash Business API: escrow at checkout",
+    title: "Vendstash: Business API, Catalog and escrow at checkout",
     summary: "Requirements for a Business API that lets marketplaces and online stores offer escrow at checkout.",
     meta: [
       { label: "Product", value: "Vendstash" },
@@ -267,7 +267,7 @@ export const thinking = {
   title: "Product teardown",
   miro: { label: "View the Miro board", href: "https://miro.com/app/board/uXjVHt-ifHc=/?share_link_id=643821455697" },
   intro:
-    "A teardown of ALAT by Wema Bank. It is an outside analysis built from using the app, user interviews, app store reviews and public information, with no inside data.",
+    "A teardown of ALAT by Wema Bank. It is an outside analysis built from using the app, user interviews, app store reviews and public information.",
   approach: {
     title: "How the teardown was done",
     points: [
@@ -449,15 +449,17 @@ export const skills = [
       "Launch readiness",
       "Product analytics",
       "Stakeholder management",
+      "A/B testing",
+      "Software testing",
     ],
   },
   {
     group: "Technical",
-    items: ["API testing (Postman, Swagger)", "Basic SQL", "Git and GitHub", "AI prototyping (Base44, Lovable)"],
+    items: ["Postman", "Swagger", "Basic SQL", "Git and GitHub", "Prototyping (Base44, Lovable, Replit)", "Zoho Workspace", "VS Code", "Vercel", "Render", "Cursor", "Claude Code"],
   },
   {
     group: "Tools",
-    items: ["Jira", "Linear", "ClickUp", "Trello", "Google Analytics", "Metabase", "Figma", "Miro", "Notion", "Canva", "Cursor", "Claude Code"],
+    items: ["Jira", "Linear", "ClickUp", "Trello", "Google Analytics", "Metabase", "Figma", "Miro", "Notion", "Canva"],
   },
 ];
 
