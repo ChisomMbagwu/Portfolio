@@ -26,9 +26,8 @@ function SectionHead({ icon, num, title, intro, tone }) {
           <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-line text-ember ${tone === "card" ? "bg-paper" : "bg-card"}`}>
             <Icon name={icon} size={24} />
           </span>
-          <h2 className="h-display text-3xl sm:text-5xl">{title}</h2>
+          <h2 className="h-display text-3xl text-ember sm:text-5xl">{title}</h2>
         </div>
-        <span className="hidden font-mono text-sm text-muted sm:block">{num} / 07</span>
       </div>
       {intro && <p className="mt-4 max-w-prose text-lg text-muted">{intro}</p>}
     </div>
@@ -70,7 +69,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-7">
-            <Link href="/#case-files" className="btn btn-primary focus-ring">
+            <Link href="/#case-studies" className="btn btn-primary focus-ring">
               See my work <Icon name="arrow" size={18} />
             </Link>
           </div>
@@ -108,8 +107,8 @@ export default function Home() {
       </Section>
 
       {/* 03 CASE FILES: projects, case studies, teardown */}
-      <Section id="case-files" tone="sage">
-        <SectionHead icon="folder" num="02" title="Case files" />
+      <Section id="case-studies">
+        <SectionHead icon="folder" num="02" title="Case Studies" />
 
         <SubHead id="projects" icon="layers" title={builds.title} />
         <div className="grid gap-5 sm:grid-cols-2">
@@ -132,7 +131,7 @@ export default function Home() {
           ))}
         </div>
 
-        <SubHead id="case-studies" icon="book" title="Case studies" />
+        <SubHead id="write-ups" icon="book" title="Full case studies" />
         <div className="grid gap-5 md:grid-cols-2">
           {caseStudies.map((c) => (
             <Reveal key={c.slug} className="h-full">
@@ -156,7 +155,11 @@ export default function Home() {
           ))}
         </div>
 
-        <SubHead id="teardown" icon="search" title={thinking.title} intro={thinking.intro} />
+      </Section>
+
+      {/* PRODUCT TEARDOWN */}
+      <Section id="teardown" tone="sage">
+        <SectionHead icon="search" num="03" title="Product Teardown" intro={thinking.intro} />
         {thinking.miro && (
           <a href={thinking.miro.href} target="_blank" rel="noreferrer" className="btn btn-ghost focus-ring mb-8">
             <Icon name="board" size={18} /> {thinking.miro.label} <Icon name="out" size={16} />
@@ -296,7 +299,7 @@ export default function Home() {
               </span>
             </div>
           </li>
-          {credentials.map((c) => (
+          {[...credentials].reverse().map((c) => (
             <li key={c.name}>
               {c.href ? (
                 <a

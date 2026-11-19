@@ -4,8 +4,9 @@ import Icon from "./Icons";
 
 const links = [
   { href: "/#about", label: "About" },
-  { href: "/#case-files", label: "Case files" },
-  { href: "/#teardown", label: "Teardown" },
+  { href: "/#cv", label: "CV", cta: true },
+  { href: "/#case-studies", label: "Case Studies" },
+  { href: "/#teardown", label: "Product Teardown" },
   { href: "/#experience", label: "Experience" },
   { href: "/#skills", label: "Skills" },
   { href: "/#beyond", label: "Beyond work" },
@@ -24,7 +25,7 @@ export default function Header() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="focus-ring block rounded-full px-4 py-2 text-muted transition-colors hover:bg-sage hover:text-ink"
+                  className={`focus-ring block rounded-full px-4 py-2 transition-colors ${l.cta ? "bg-ember/15 font-semibold text-ember hover:bg-ember/25" : "text-muted hover:bg-sage hover:text-ink"}`}
                 >
                   {l.label}
                 </Link>

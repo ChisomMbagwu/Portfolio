@@ -12,7 +12,7 @@ function findPhoto() {
 export default function Headshot({ className = "" }) {
   const src = findPhoto();
   return (
-    <div className={`relative aspect-[2/3] overflow-hidden rounded-[2rem] bg-sage ${className}`}>
+    <div className={`relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-sage ${className}`}>
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt="Portrait of Chisom Mbagwu" className="h-full w-full object-cover object-[50%_0%]" />
