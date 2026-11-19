@@ -292,15 +292,6 @@ export default function Home() {
       <Section id="education" tone="sage">
         <SectionHead icon="cap" num="05" title="Education and certifications" />
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li>
-            <div className="flex h-full flex-col rounded-2xl border border-ember/60 bg-card px-5 py-4">
-              <span className="font-medium">{education.degree}</span>
-              <span className="mt-1 text-sm text-muted">{education.school}</span>
-              <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ember">
-                <Icon name="cap" size={15} /> Degree
-              </span>
-            </div>
-          </li>
           {[...credentials].reverse().map((c) => (
             <li key={c.name}>
               {c.href ? (
@@ -326,6 +317,18 @@ export default function Home() {
               )}
             </li>
           ))}
+          <li>
+            <div className="flex h-full items-center gap-4 rounded-2xl border border-ember bg-ember px-5 py-4 text-paper">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-paper/20">
+                <Icon name="cap" size={24} />
+              </span>
+              <div>
+                <span className="block text-xs font-bold uppercase tracking-[0.14em]">Degree</span>
+                <span className="mt-0.5 block font-bold leading-snug">{education.degree}</span>
+                <span className="block text-sm opacity-80">{education.school}</span>
+              </div>
+            </div>
+          </li>
         </ul>
       </Section>
 
