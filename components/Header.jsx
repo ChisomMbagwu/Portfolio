@@ -5,6 +5,7 @@ import Icon from "./Icons";
 const links = [
   { href: "/#about", label: "About" },
   { href: "/#cv", label: "CV", cta: true },
+  { href: "/#projects", label: "Projects" },
   { href: "/#case-studies", label: "Case Studies" },
   { href: "/#teardown", label: "Product Teardown" },
   { href: "/#experience", label: "Experience" },
@@ -20,12 +21,12 @@ export default function Header() {
           aria-label="Primary"
           className="hidden rounded-full border border-line bg-card/90 px-2 py-1.5 backdrop-blur xl:block"
         >
-          <ul className="flex items-center gap-0.5 text-[15px]">
+          <ul className="flex items-center gap-0.5 text-sm">
             {links.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`focus-ring block rounded-full px-4 py-2 transition-colors ${l.cta ? "bg-ember/15 font-semibold text-ember hover:bg-ember/25" : "text-muted hover:bg-sage hover:text-ink"}`}
+                  className={`focus-ring block rounded-full px-3 py-1.5 transition-colors ${l.cta ? "bg-ember/15 font-semibold text-ember hover:bg-ember/25" : "text-muted hover:bg-sage hover:text-ink"}`}
                 >
                   {l.label}
                 </Link>

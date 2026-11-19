@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="wrap grid items-center gap-8 pb-12 pt-6 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <section className="wrap grid items-center gap-8 py-6 lg:h-[calc(100svh-5rem)] lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
           <p className="inline-block rounded-full bg-card px-3 py-1 text-xs text-ink/90">{hero.badge}</p>
           <h1 className="mt-5 font-sans font-bold tracking-tight">
@@ -69,12 +69,12 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-7">
-            <Link href="/#case-studies" className="btn btn-primary focus-ring">
+            <Link href="/#projects" className="btn btn-primary focus-ring">
               See my work <Icon name="arrow" size={18} />
             </Link>
           </div>
         </div>
-        <Headshot className="mx-auto h-[26rem] w-auto max-w-full lg:ml-auto lg:h-[min(34rem,calc(100svh-9rem))]" />
+        <Headshot className="mx-auto h-[26rem] w-auto max-w-full lg:ml-auto lg:h-[min(36rem,calc(100svh-9rem))]" />
       </section>
 
       {/* 01 ABOUT */}
@@ -107,10 +107,8 @@ export default function Home() {
       </Section>
 
       {/* 03 CASE FILES: projects, case studies, teardown */}
-      <Section id="case-studies">
-        <SectionHead icon="folder" num="02" title="Case Studies" />
-
-        <SubHead id="projects" icon="layers" title={builds.title} />
+      <Section id="projects">
+        <SectionHead icon="layers" num="02" title={builds.title} />
         <div className="grid gap-5 sm:grid-cols-2">
           {builds.items.map((b) => (
             <Reveal key={b.name} className={`${card} flex h-full flex-col`}>
@@ -131,7 +129,11 @@ export default function Home() {
           ))}
         </div>
 
-        <SubHead id="write-ups" icon="book" title="Full case studies" />
+      </Section>
+
+      {/* CASE STUDIES */}
+      <Section id="case-studies" tone="sage">
+        <SectionHead icon="book" num="03" title="Case Studies" />
         <div className="grid gap-5 md:grid-cols-2">
           {caseStudies.map((c) => (
             <Reveal key={c.slug} className="h-full">
@@ -158,7 +160,7 @@ export default function Home() {
       </Section>
 
       {/* PRODUCT TEARDOWN */}
-      <Section id="teardown" tone="sage">
+      <Section id="teardown">
         <SectionHead icon="search" num="03" title="Product Teardown" intro={thinking.intro} />
         {thinking.miro && (
           <a href={thinking.miro.href} target="_blank" rel="noreferrer" className="btn btn-ghost focus-ring mb-8">
@@ -233,7 +235,7 @@ export default function Home() {
       </Section>
 
       {/* 04 EXPERIENCE */}
-      <Section id="experience">
+      <Section id="experience" tone="sage">
         <SectionHead icon="briefcase" num="03" title="Work experience" />
         <ol className="relative space-y-10 border-l border-line pl-8 sm:pl-10">
           {experience.map((e) => (
@@ -265,7 +267,7 @@ export default function Home() {
       </Section>
 
       {/* 05 SKILLS */}
-      <Section id="skills" tone="sage">
+      <Section id="skills">
         <SectionHead icon="zap" num="04" title="Skills" />
         <div className="grid gap-5 md:grid-cols-3">
           {skills.map((g) => (
@@ -287,7 +289,7 @@ export default function Home() {
       </Section>
 
       {/* 06 EDUCATION AND CERTIFICATIONS */}
-      <Section id="education">
+      <Section id="education" tone="sage">
         <SectionHead icon="cap" num="05" title="Education and certifications" />
         <ul className="grid gap-3 sm:grid-cols-2">
           <li>
@@ -328,7 +330,7 @@ export default function Home() {
       </Section>
 
       {/* 07 BEYOND WORK */}
-      <Section id="beyond" tone="sage">
+      <Section id="beyond">
         <SectionHead icon="heart" num="06" title={beyond.title} intro={beyond.intro} />
         <ul className="divide-y divide-line border-y border-line">
           {beyond.volunteering.map((v) => (
