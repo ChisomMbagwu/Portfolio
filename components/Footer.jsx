@@ -1,12 +1,13 @@
 import { site } from "@/data/content";
+import Icon from "./Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const links = [
-    { href: site.linkedin, label: "LinkedIn" },
-    { href: site.medium, label: "Medium" },
+    { href: site.linkedin, label: "LinkedIn", icon: "linkedin" },
+    { href: site.medium, label: "Medium", icon: "medium" },
     site.github && { href: site.github, label: "GitHub" },
-    { href: `mailto:${site.email}`, label: "Email" },
+    { href: `mailto:${site.email}`, label: "Email", icon: "mail" },
   ].filter(Boolean);
   return (
     <footer className="border-t border-line">
@@ -17,8 +18,8 @@ export default function Footer() {
         <ul className="flex flex-wrap gap-5">
           {links.map((l) => (
             <li key={l.label}>
-              <a href={l.href} className="focus-ring underline-offset-4 hover:text-ink hover:underline" target={l.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
-                {l.label}
+              <a href={l.href} className="focus-ring inline-flex items-center gap-2 underline-offset-4 hover:text-ink hover:underline" target={l.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+                {l.icon && <Icon name={l.icon} size={16} />}{l.label}
               </a>
             </li>
           ))}

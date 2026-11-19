@@ -27,7 +27,7 @@ export const workedOn = {
 export const about = {
   title: "About",
   body: [
-    "I lead discovery, but I don\u2019t keep it to myself. I bring engineers, designers and the entire team close to the problem from the start, so they understand who we\u2019re solving for and why. That way we shape the solution together, and the team builds with context, not just instructions.",
+    "I lead discovery, but I involve the team early. I bring engineers, designers and the entire team close to the problem from the start, so they understand who we\u2019re solving for and why. That way we shape the solution together, and the team builds with context, not just instructions.",
     "My background in sociology helps me understand people in their context, not just their complaints. I\u2019m also comfortable on the technical side: I can read API documentation, test endpoints and prototype ideas, which makes conversations with engineers faster and more useful.",
   ],
 };
@@ -265,6 +265,7 @@ export const digitallie = {
 
 export const thinking = {
   title: "Product teardown",
+  miro: { label: "View the Miro board", href: "https://miro.com/app/board/uXjVHt-ifHc=/?share_link_id=643821455697" },
   intro:
     "A teardown of ALAT by Wema Bank. It is an outside analysis built from using the app, user interviews, app store reviews and public information, with no inside data.",
   approach: {
